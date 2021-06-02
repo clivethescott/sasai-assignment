@@ -10,7 +10,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.econetwireless</groupId>
     <artifactId>intelligent-network-api</artifactId>
+    <version>1.0.0</version>
+
     <dependencies>
         <dependency>
             <groupId>com.econetwireless</groupId>
