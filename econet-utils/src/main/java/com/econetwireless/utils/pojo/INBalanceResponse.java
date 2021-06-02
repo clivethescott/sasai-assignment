@@ -1,5 +1,7 @@
 package com.econetwireless.utils.pojo;
 
+import java.util.Objects;
+
 /**
  * Created by tnyamakura on 17/3/2017.
  */
@@ -50,5 +52,18 @@ public class INBalanceResponse {
         sb.append(", amount=").append(amount);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final INBalanceResponse that = (INBalanceResponse) o;
+        return Double.compare(that.amount, amount) == 0 && Objects.equals(responseCode, that.responseCode) && Objects.equals(narrative, that.narrative) && Objects.equals(msisdn, that.msisdn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(responseCode, narrative, msisdn, amount);
     }
 }
